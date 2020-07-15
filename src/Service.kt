@@ -21,9 +21,9 @@ class Service {
             }
 
             if (!addedNumberToUpwards) {
-                downwardsSet.add(num)
+                val addedNumberToDownwards = downwardsSet.add(num)
 
-                if (num > currentDownwardsMax) {
+                if (addedNumberToDownwards && num > currentDownwardsMax) {
                     currentDownwardsMax = num
                 }
             }
