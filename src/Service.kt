@@ -13,18 +13,14 @@ class Service {
         var currentDownwardsMax: Int = 0
 
         for (num in entryArray) {
-            var numberAddThisIteration = false
 
-            if (!upwardsSet.contains(num)){
-                upwardsSet.add(num)
-                numberAddThisIteration = true
+            val addedNumberToUpwards = upwardsSet.add(num)
 
-                if (num > currentUpwardsMax) {
-                    currentUpwardsMax = num
-                }
+            if (num > currentUpwardsMax) {
+                currentUpwardsMax = num
             }
 
-            if (!downwardsSet.contains(num) && !numberAddThisIteration) {
+            if (!addedNumberToUpwards) {
                 downwardsSet.add(num)
 
                 if (num > currentDownwardsMax) {
